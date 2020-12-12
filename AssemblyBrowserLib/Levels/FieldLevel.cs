@@ -13,6 +13,7 @@ namespace AssemblyBrowserLib.Levels
         {
             Type = GenericDodger.GetName(field.FieldType);
             Name = field.Name;
+            fieldInfo = field;
         }
 
         public string GetFullName()

@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using lab3.View;
+
 namespace lab3
 {
     /// <summary>
@@ -23,6 +25,7 @@ namespace lab3
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new AppView();
         }
     }
 }

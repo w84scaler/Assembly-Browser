@@ -7,7 +7,7 @@ namespace AssemblyBrowserLib.Levels
 {
     public class AssemblyLevel
     {
-        private List<NamespaceLevel> Namespaces;
+        public List<NamespaceLevel> Namespaces;
         public AssemblyLevel(string path)
         {
             Assembly assembly;

@@ -16,6 +16,7 @@ namespace AssemblyBrowserLib.Levels
 
         internal ClassLevel(Type type)
         {
+            this.type = type;
             BindingFlags flags = BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Static | BindingFlags.Instance | BindingFlags.DeclaredOnly;
             Name = GenericDodger.GetName(type);
             Properties = GetProperties(type.GetProperties(flags));
