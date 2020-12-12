@@ -7,7 +7,7 @@ using System.Windows;
 
 namespace lab3.View
 {
-    public class AppView
+    public class AppView : INotifyPropertyChanged
     {
         private List<NamespaceView> namespaces;
         public List<NamespaceView> Namespaces
