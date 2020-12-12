@@ -13,11 +13,12 @@ namespace AssemblyBrowserLib.Levels
         {
             Type = GenericDodger.GetName(prop.PropertyType);
             Name = prop.Name;
+            propInfo = prop;
         }
 
         public string GetFullName()
         {
-            return Type + " " + Name + " { " + Modificators.GetPropertyModificators(propInfo) + " }";
+            return Type + " " + Name + " { " + Modificators.GetPropertyGetSetModificators(propInfo) + " }";
         }
     }
 }

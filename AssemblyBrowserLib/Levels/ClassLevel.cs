@@ -29,7 +29,7 @@ namespace AssemblyBrowserLib.Levels
             List<MethodLevel> list = new List<MethodLevel>();
             foreach (MemberInfo member in members)
             {
-                if (CompilerGenerated(member))
+                if (!CompilerGenerated(member))
                     list.Add(new MethodLevel((MethodInfo)member));
             }
             return list;
@@ -40,7 +40,7 @@ namespace AssemblyBrowserLib.Levels
             List<FieldLevel> list = new List<FieldLevel>();
             foreach (MemberInfo member in members)
             {
-                if (CompilerGenerated(member))
+                if (!CompilerGenerated(member))
                     list.Add(new FieldLevel((FieldInfo)member));
             }
             return list;
@@ -51,7 +51,7 @@ namespace AssemblyBrowserLib.Levels
             List<PropertyLevel> list = new List<PropertyLevel>();
             foreach (MemberInfo member in members)
             {
-                if (CompilerGenerated(member))
+                if (!CompilerGenerated(member))
                     list.Add(new PropertyLevel((PropertyInfo)member));
             }
             return list;
@@ -59,7 +59,7 @@ namespace AssemblyBrowserLib.Levels
 
         public string GetFullName()
         {
-            return Modificators.GetClassModificators(type) + " " + Name;
+            return Modificators.GetClassModificators(type) + Name;
         }
     }
 }

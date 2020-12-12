@@ -39,7 +39,7 @@ namespace AssemblyBrowserLib.Levels
 
         public string GetFullName()
         {
-            return Modificators.GetMethodModificators(methodInfo) + " " + GetSignature(this); ;
+            return Modificators.GetMethodModificators(methodInfo) + GetSignature(this); ;
         }
     }
 }

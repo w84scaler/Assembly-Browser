@@ -18,7 +18,7 @@ namespace AssemblyBrowserLib.Levels
 
         public string GetFullName()
         {
-            return Modificators.GetFieldModificators(fieldInfo) + " " + Type + " " + Name;
+            return Modificators.GetFieldModificators(fieldInfo) + Type + " " + Name;
         }
     }
 }

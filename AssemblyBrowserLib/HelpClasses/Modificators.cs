@@ -10,21 +10,21 @@ namespace AssemblyBrowserLib.HelpClasses
             string result = "";
 
             if (method.IsPrivate)
-                result += "private";
+                result += "private ";
             if (method.IsFamily)
-                result += "protected";
+                result += "protected ";
             if (method.IsFamilyOrAssembly)
-                result += "protected internal";
+                result += "protected internal ";
             if (method.IsAssembly)
-                result += "internal";
+                result += "internal ";
             if (method.IsPublic)
-                result += "public";
+                result += "public ";
             if (method.IsStatic)
-                result += "static";
+                result += "static ";
             if (method.IsAbstract)
-                result += "abstract";
+                result += "abstract ";
             if (method.IsVirtual)
-                result += "virtual";
+                result += "virtual ";
             return result;
         }
 
@@ -32,14 +32,16 @@ namespace AssemblyBrowserLib.HelpClasses
         {
             string result = "";
 
-            if (type.IsNestedPublic)
-                result += "public";
-            if (type.IsAbstract)
-                result += "abstract";
-            if (type.IsNestedFamily)
-                result += "protected";
+            if (type.IsPublic)
+                result += "public ";
             if (type.IsNestedPrivate)
-                result += "private";
+                result += "private ";
+            if (type.IsInterface)
+                return result += "interface ";
+            if (type.IsAbstract)
+                result += "abstract ";
+            if (type.IsNestedFamily)
+                result += "protected ";
             return result;
         }
 
@@ -48,28 +50,28 @@ namespace AssemblyBrowserLib.HelpClasses
             string result = "";
 
             if (field.IsPrivate)
-                result += "private";
+                result += "private ";
             if (field.IsFamily)
-                result += "protected";
+                result += "protected ";
             if (field.IsFamilyOrAssembly)
-                result += "protected internal";
+                result += "protected internal ";
             if (field.IsAssembly)
-                result += "internal";
+                result += "internal ";
             if (field.IsPublic)
-                result += "public";
+                result += "public ";
             if (field.IsStatic)
-                result += "static";
+                result += "static ";
             return result;
         }
 
-        public static string GetPropertyModificators(PropertyInfo prop)
+        public static string GetPropertyGetSetModificators(PropertyInfo prop)
         {
             string result = "";
 
             if (prop.CanRead)
                 result += "public";
             else
-                result += "private";
+                result += "private ";
             result += " get; ";
             if (prop.CanWrite)
                 result += "public";
